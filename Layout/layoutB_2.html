@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout B-2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #warp {
+        width: 100%;
+      }
+      /* header */
+      #header {
+        width: 100%;
+        background-color: #797979;
+      }
+      #header > .headerwarp {
+        margin: 0 auto;
+        width: 1200px;
+        display: flex;
+      }
+      #header > .headerwarp > .logo {
+        width: 20%;
+        height: 100px;
+        background-color: red;
+      }
+      #header > .headerwarp > .nav {
+        width: 80%;
+        height: 100px;
+        background-color: orange;
+      }
+
+      /* slider */
+      #slider {
+        margin: 0 auto;
+        width: 1200px;
+        height: 300px;
+        background-color: yellow;
+      }
+
+      /* main */
+      #main {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+      }
+      #main > .content1 {
+        width: 33.333%;
+        height: 200px;
+        background-color: yellowgreen;
+      }
+      #main > .content2 {
+        width: 33.333%;
+        height: 200px;
+        background-color: green;
+      }
+      #main > .content3 {
+        width: 33.333%;
+        height: 200px;
+        background-color: skyblue;
+      }
+
+      /* footer */
+      #footer {
+        width: 100%;
+        background-color: #797979;
+      }
+      #footer > .footerwarp {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+      }
+      #footer > .footerwarp > .footer1 {
+        width: 80%;
+        height: 100px;
+        background-color: blue;
+      }
+      #footer > .footerwarp > .footer2 {
+        width: 20%;
+      }
+      #footer > .footerwarp > .footer2 > .footer2-1 {
+        height: 50px;
+        background-color: blueviolet;
+      }
+      #footer > .footerwarp > .footer2 > .footer2-2 {
+        height: 50px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warp">
+      <!-- header -->
+      <header id="header">
+        <div class="headerwarp">
+          <h1 class="logo"></h1>
+          <nav class="nav"></nav>
+        </div>
+      </header>
+
+      <!-- slider -->
+      <article id="slider"></article>
+
+      <!-- main -->
+      <main id="main">
+        <div class="content1"></div>
+        <div class="content2"></div>
+        <div class="content3"></div>
+      </main>
+
+      <!-- footer -->
+      <footer id="footer">
+        <div class="footerwarp">
+          <div class="footer1"></div>
+          <div class="footer2">
+            <div class="footer2-1"></div>
+            <div class="footer2-2"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

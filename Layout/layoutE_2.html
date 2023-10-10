@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout E_2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #warp {
+        width: 100%;
+        height: 100%;
+      }
+      #main {
+        width: 100%;
+        height: calc(100vh - 100px);
+        display: flex;
+      }
+      /* aside */
+      #aside {
+        width: 200px;
+        height: 100%;
+      }
+      #aside > .logo {
+        width: 100%;
+        height: 150px;
+        background-color: red;
+      }
+      #aside > .nav {
+        width: 100%;
+        height: calc(100% - 150px);
+        background-color: orange;
+      }
+      /* contents */
+      #contents {
+        width: 400px;
+        height: 100%;
+      }
+      #info {
+        width: 100%;
+        height: 40%;
+        background-color: yellow;
+      }
+      #image {
+        width: 100%;
+        height: 40%;
+        background-color: yellowgreen;
+      }
+      #link {
+        width: 100%;
+        height: 20%;
+        background-color: green;
+      }
+      /* slider */
+      #slider {
+        width: calc(100% - 200px - 400px);
+        height: 100%;
+        background-color: skyblue;
+      }
+      /* footer */
+      #footer {
+        width: 100%;
+        display: flex;
+      }
+      #footer > .footer1 {
+        width: 200px;
+        height: 100px;
+        background-color: blue;
+      }
+      #footer > .footer2 {
+        width: calc(70% - 100px);
+        height: 100px;
+        background-color: blueviolet;
+      }
+      #footer > .footer3 {
+        width: calc(30% - 100px);
+        height: 100px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warp">
+      <main id="main">
+        <aside id="aside">
+          <h1 class="logo"></h1>
+          <nav class="nav"></nav>
+        </aside>
+        <div id="contents">
+          <article id="info"></article>
+          <article id="image"></article>
+          <article id="link"></article>
+        </div>
+        <article id="slider"></article>
+      </main>
+      <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+      </footer>
+    </div>
+  </body>
+</html>

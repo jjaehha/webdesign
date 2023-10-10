@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout D_1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #warp {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #aside {
+        width: 200px;
+      }
+      aside > .logo {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+      }
+      aside > .nav {
+        width: 100%;
+        height: 750px;
+        background-color: orange;
+      }
+      #main {
+        width: calc(100% - 200px);
+        height: 850px;
+      }
+      #slider {
+        width: 100%;
+        height: 400px;
+        background-color: yellow;
+      }
+      #slider > .link {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        height: 300px;
+        background-color: darkgreen;
+      }
+      #banner {
+        width: 100%;
+        height: 200px;
+        background-color: yellowgreen;
+      }
+      #contents {
+        width: 100%;
+        height: 250px;
+        background-color: green;
+      }
+      #footer {
+        width: 100%;
+        display: flex;
+      }
+      #footer > .footer1 {
+        width: 200px;
+        height: 100px;
+        background-color: skyblue;
+      }
+      #footer > .footer2 {
+        width: calc(100% - 400px);
+        height: 100px;
+        background-color: blue;
+      }
+      #footer > .footer3 {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warp">
+      <!-- aside -->
+      <aside id="aside">
+        <h1 class="logo"></h1>
+        <nav class="nav"></nav>
+      </aside>
+
+      <!-- main -->
+      <main id="main">
+        <!-- slider -->
+        <article id="slider">
+          <div class="link"></div>
+        </article>
+        <!-- banner -->
+        <article id="banner"></article>
+        <!-- contents -->
+        <section id="contents"></section>
+      </main>
+      <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+      </footer>
+    </div>
+  </body>
+</html>

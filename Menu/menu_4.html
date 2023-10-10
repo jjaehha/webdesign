@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu_4</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+      }
+      #warp {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #aside {
+        width: 200px;
+      }
+      aside > .logo {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+      }
+      aside > .nav {
+        width: 100%;
+        height: 750px;
+        background-color: orange;
+      }
+      .nav > ul > li > a {
+        display: block;
+        padding: 10px;
+        background-color: white;
+        text-align: center;
+        color: black;
+      }
+      .nav > ul > li > a:hover {
+        font-weight: bolder;
+        background-color: gray;
+      }
+      .nav > ul > li > ul {
+        display: none;
+      }
+      .nav > ul > li > ul > li > a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background-color: gray;
+        color: black;
+      }
+      .nav > ul > li > ul > li > a:hover {
+        font-weight: bolder;
+        background-color: darkgray;
+      }
+      #main {
+        width: calc(100% - 200px);
+        height: 850px;
+      }
+      #slider {
+        width: 100%;
+        height: 400px;
+        background-color: yellow;
+      }
+      #slider > .link {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        height: 300px;
+        background-color: darkgreen;
+      }
+      #banner {
+        width: 100%;
+        height: 200px;
+        background-color: yellowgreen;
+      }
+      #contents {
+        width: 100%;
+        height: 250px;
+        background-color: green;
+      }
+      #footer {
+        width: 100%;
+        display: flex;
+      }
+      #footer > .footer1 {
+        width: 200px;
+        height: 100px;
+        background-color: skyblue;
+      }
+      #footer > .footer2 {
+        width: calc(100% - 400px);
+        height: 100px;
+        background-color: blue;
+      }
+      #footer > .footer3 {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warp">
+      <!-- aside -->
+      <aside id="aside">
+        <h1 class="logo"></h1>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="">메뉴1</a>
+              <ul class="submenu">
+                <li><a href="">서브메뉴1-1</a></li>
+                <li><a href="">서브메뉴1-2</a></li>
+                <li><a href="">서브메뉴1-3</a></li>
+                <li><a href="">서브메뉴1-4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">메뉴2</a>
+              <ul class="submenu">
+                <li><a href="">서브메뉴2-1</a></li>
+                <li><a href="">서브메뉴2-2</a></li>
+                <li><a href="">서브메뉴2-3</a></li>
+                <li><a href="">서브메뉴2-4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">메뉴3</a>
+              <ul class="submenu">
+                <li><a href="">서브메뉴3-1</a></li>
+                <li><a href="">서브메뉴3-2</a></li>
+                <li><a href="">서브메뉴3-3</a></li>
+                <li><a href="">서브메뉴3-4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">메뉴4</a>
+              <ul class="submenu">
+                <li><a href="">서브메뉴4-1</a></li>
+                <li><a href="">서브메뉴4-2</a></li>
+                <li><a href="">서브메뉴4-3</a></li>
+                <li><a href="">서브메뉴4-4</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- main -->
+      <main id="main">
+        <!-- slider -->
+        <article id="slider">
+          <div class="link"></div>
+        </article>
+        <!-- banner -->
+        <article id="banner"></article>
+        <!-- contents -->
+        <section id="contents"></section>
+      </main>
+      <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $(".nav > ul > li").mouseover(function () {
+          $(this).find(".submenu").stop().slideDown();
+        });
+        $(".nav > ul > li").mouseout(function () {
+          $(this).find(".submenu").stop().slideUp();
+        });
+      });
+    </script>
+  </body>
+</html>

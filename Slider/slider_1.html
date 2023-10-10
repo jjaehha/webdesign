@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slider_1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #warp {
+        width: 100%;
+        height: 100%;
+      }
+      #main {
+        width: 100%;
+        height: calc(100vh - 120px);
+        display: flex;
+      }
+      /* aside */
+      #aside {
+        width: 200px;
+        height: 100%;
+      }
+      #aside > .logo {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+      }
+      #aside > .nav {
+        width: 100%;
+        height: calc(100% - 100px);
+        background-color: orange;
+      }
+      /* contents */
+      #contents {
+        width: 400px;
+        height: 100%;
+      }
+      #banner {
+        width: 100%;
+        height: 15%;
+        background-color: yellow;
+      }
+      #info {
+        width: 100%;
+        height: 35%;
+        background-color: yellowgreen;
+      }
+      #image {
+        width: 100%;
+        height: 35%;
+        background-color: green;
+      }
+      #link {
+        width: 100%;
+        height: 15%;
+        background-color: darkgreen;
+      }
+      /* slider */
+      #slider {
+        width: calc(100% - 200px - 400px);
+        height: 100%;
+        background-color: skyblue;
+      }
+      #slider > .sliderWarp {
+        position: relative;
+      }
+      #slider > .sliderWarp > div {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      #slider > .sliderWarp > .slider1 {
+        display: block;
+      }
+      #slider > .sliderWarp > .slidImg > img {
+        vertical-align: top;
+        width: 500px;
+        height: 500px;
+      }
+      #slider > .sliderWarp > .slidImg > span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 10px 20px;
+        color: black;
+      }
+      /* footer */
+      #footer {
+        width: 100%;
+        display: flex;
+      }
+      #footer > .footer1 {
+        width: 200px;
+        height: 120px;
+        background-color: blue;
+      }
+      #footer > .footer2 {
+        width: calc(100% - 200px);
+      }
+      #footer > .footer2 > .footer2-1 {
+        width: 100%;
+        height: 60px;
+        background-color: blueviolet;
+      }
+      #footer > .footer2 > .footer2-2 {
+        width: 100%;
+        height: 60px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="warp">
+      <main id="main">
+        <aside id="aside">
+          <h1 class="logo"></h1>
+          <nav class="nav"></nav>
+        </aside>
+        <div id="contents">
+          <article id="banner"></article>
+          <article id="info"></article>
+          <article id="image"></article>
+          <article id="link"></article>
+        </div>
+        <article id="slider">
+          <div class="sliderWarp">
+            <div class="slidImg slider1">
+              <img style="background-color: black" />
+              <span>이미지1</span>
+            </div>
+            <div class="slidImg slider2">
+              <img style="background-color: darkgray" />
+              <span>이미지2</span>
+            </div>
+            <div class="slidImg slider3">
+              <img style="background-color: gray" />
+              <span>이미지3</span>
+            </div>
+          </div>
+        </article>
+      </main>
+      <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2">
+          <div class="footer2-1"></div>
+          <div class="footer2-2"></div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        let currentIndex = 0; //현재 이미지
+
+        setInterval(function () {
+          //3초에 한번씩 실행
+          let nextIndex = (currentIndex + 1) % 3;
+          $(".slidImg").eq(currentIndex).fadeOut(); //0 1 2 0 1 2
+          $(".slidImg").eq(nextIndex).fadeIn(); //1 2 0 1 2 0
+          currentIndex = nextIndex;
+
+          // console.log(currentIndex);
+          // console.log(nextIndex);
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
